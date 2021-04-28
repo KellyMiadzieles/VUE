@@ -43,6 +43,20 @@
     <br>
     <button v-on:click="transferMoneyButton()">Transfer money</button>
     {{ transfer }}
+    <br>
+    <br>
+    <h1>List</h1>
+    <table>
+      <tr>
+        <th>Account Number</th>
+        <th>Balance</th>
+      </tr>
+      <tr v-for="account in accounts">
+        <td>{{ account.accountNumber }}</td>
+        <td>{{ account.balance }}</td>
+        <td>{{ account }}</td>
+      </tr>
+    </table>
   </div>
 </template>
 
@@ -66,7 +80,8 @@ export default {
       'fromAccountNr': '',
       'toAccountNr': '',
       'transferAmount': '',
-      'transfer': ''
+      'transfer': '',
+      'accounts': []
     }
   },
   methods: {
@@ -104,7 +119,11 @@ export default {
             console.log(response);
             this.transfer = response.data
           });
-    }
+    },
+  },
+  mounted() {
+    this.$http.get("http://localhost:8080/account")
+        .then(response => this.accounts = response.data);
   }
 }
 </script>
