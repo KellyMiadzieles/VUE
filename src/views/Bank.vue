@@ -6,7 +6,7 @@
     <input v-model="firstName" placeholder="Enter your first name"/>
     <input v-model="lastName" placeholder="Enter your last name"/>
     <input v-model="accountNum" placeholder="Enter your account number"/>
-    <input v-model="balance1" placeholder="Enter your balance"/>
+    <input v-model="balance1" placeholder="Enter the amount"/>
     <br>
     <br>
     <button v-on:click="createAccountButton()">Create Account</button>
@@ -21,7 +21,7 @@
 
     <h2>Deposit</h2>
     <input v-model="accountNr1" placeholder="Enter account number"/>
-    <input v-model="depositAmount" placeholder="Enter the amount you want to deposit"/>
+    <input v-model="depositAmount" placeholder="Enter the amount"/>
     <br>
     <br>
     <button v-on:click="getDepostiButton()">Get Deposit</button>
@@ -29,7 +29,7 @@
 
     <h2>Withdraw Money</h2>
     <input v-model="withdrawAccountNr" placeholder="Enter account number"/>
-    <input v-model="withdrawAmount" placeholder="Enter the amount you want to withdraw"/>
+    <input v-model="withdrawAmount" placeholder="Enter the amount"/>
     <br>
     <br>
     <button v-on:click="withdrawMoneyButton()">Withdraw money</button>
@@ -38,7 +38,7 @@
     <h2>Transfer Money</h2>
     <input v-model="fromAccountNr" placeholder="Enter account number"/>
     <input v-model="toAccountNr" placeholder="Enter account number"/>
-    <input v-model="transferAmount" placeholder="Enter the amount you want to transfer"/>
+    <input v-model="transferAmount" placeholder="Enter the amount"/>
     <br>
     <br>
     <button v-on:click="transferMoneyButton()">Transfer money</button>
