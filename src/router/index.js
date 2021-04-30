@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Register from '../views/Register.vue'
 import Bank from '../views/Bank.vue'
+import Login from '../views/Login.vue'
 
 Vue.use(VueRouter)
 
@@ -21,6 +22,11 @@ const routes = [
     path:'/bank',
     name:'Bank',
     component: Bank,
+  },
+  {
+    path:'/login',
+    name:'Login',
+    component: Login,
   },
   {
     path: '/about',

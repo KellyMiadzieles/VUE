@@ -86,43 +86,43 @@ export default {
   },
   methods: {
     'createAccountButton': function () {
-      this.$http.post('http://localhost:8080/createAccount/' + this.firstName + '/' + this.lastName + '/' + this.accountNum + '/' + this.balance1)
+      this.$http.post('/api/createAccount/' + this.firstName + '/' + this.lastName + '/' + this.accountNum + '/' + this.balance1)
           .then(function (response) {
             console.log(response);
             this.account = response.data
           });
     },
     'getBalanceButton': function () {
-      this.$http.get('http://localhost:8080/balance/' + this.accountNr)
+      this.$http.get('/api/balance/' + this.accountNr)
           .then(response => {
             console.log(response);
             this.balance = response.data
           });
     },
     'getDepostiButton': function () {
-      this.$http.put('http://localhost:8080/deposit/' + this.accountNr1 + '/' + this.depositAmount)
+      this.$http.put('/api/deposit/' + this.accountNr1 + '/' + this.depositAmount)
           .then(response => {
             console.log(response);
             this.deposit = response.data
           });
     },
     'withdrawMoneyButton': function () {
-      this.$http.put('http://localhost:8080/withdrawMoney/' + this.withdrawAccountNr + '/' + this.withdrawAmount)
+      this.$http.put('/api/withdrawMoney/' + this.withdrawAccountNr + '/' + this.withdrawAmount)
           .then(response => {
             console.log(response);
             this.withdraw = response.data
           });
     },
     'transferMoneyButton': function () {
-      this.$http.put('http://localhost:8080/transferMoney/' + this.fromAccountNr + '/' + this.transferAmount + '/' + this.toAccountNr)
+      this.$http.put('/api/transferMoney/' + this.fromAccountNr + '/' + this.transferAmount + '/' + this.toAccountNr)
           .then(response => {
             console.log(response);
             this.transfer = response.data
           });
     },
   },
-  mounted() {
-    this.$http.get("http://localhost:8080/account")
+  mounted() { //et teha list
+    this.$http.get("/api/account")
         .then(response => this.accounts = response.data);
   }
 }
